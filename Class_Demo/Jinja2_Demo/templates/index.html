@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {{page_name}} Page {% endblock %}</title>
+</head>
+<body>
+    {% set course_name = 'FSWD109' %}
+
+    <h1>
+        {{course_name}}: Jinja2 Class Demo @ {{ page_name }}
+    </h1>
+
+    <div>
+        <h3>
+            Welcome to the {{ page_name }} Page!
+        </h3>
+
+        {% block list %}{% endblock %}
+    </div>
+</body>
+</html>

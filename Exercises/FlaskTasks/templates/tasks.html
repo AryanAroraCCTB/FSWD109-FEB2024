@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {% if list|length|int != 0 %}
+        <h4>{{ page_name }}s List</h4>
+        <ul>
+            {% for item in list %}
+                <li>{{item.name}} on {{item.date}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h4>No {{page_name}}</h4>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,7 @@
+{% from 'lists.html' import render_list %}
+
+{% extends 'index.html' %}
+
+{% block list %}
+    {{ render_list(list) }}
+{% endblock %}
