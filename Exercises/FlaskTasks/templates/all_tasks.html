@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {% if list|length|int != 0 %}
+        <h4>{{ page_name }}s List</h4>
+        <ul>
+            {% for index in range(0, list|length|int) %}
+                <li style="display: flex; flex-direction: row;">
+                    <a style="margin: 3px;" href="{{ url_for('view_tasks_by_id', task_id=index) }}">{{list[index].name}}</a>
+                    <a style="margin: 3px;"href="{{ url_for('delete_task_by_id', task_id=index) }}"> X </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h4>No {{page_name}}</h4>
+    {% endif %}
+{% endblock %}
