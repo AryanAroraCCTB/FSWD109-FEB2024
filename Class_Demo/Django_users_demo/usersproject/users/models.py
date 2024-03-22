@@ -6,6 +6,7 @@ class Users(models.Model):
     name = models.CharField(max_length=30, null=False)
     email = models.EmailField(unique=True, null=False)
     age = models.IntegerField(null=False)
+    
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
