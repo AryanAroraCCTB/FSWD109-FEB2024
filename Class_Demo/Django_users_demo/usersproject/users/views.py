@@ -7,8 +7,36 @@ from .forms import UserForm
 
 # Create your views here.
 def user_list(request):
-    users = Users.objects.all()
+    page_number = request.GET.get('page_number')
+    page_size = request.GET.get('page_size')
+    if page_number and page_size:
+        # return some users
+        start = (page_number - 1) * page_size
+        end = start + page_size
+        users = Users.objects.all()[start:end]
+    else:
+        # return all users
+    	users = Users.objects.all()
     return JsonResponse({"users": [user.serialize() for user in users]})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def user_detail(request, id):
